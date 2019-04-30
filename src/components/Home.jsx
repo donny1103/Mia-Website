@@ -27,6 +27,7 @@ export default class Home extends Component{
                     <i className='fas fa-envelope'/> miali@kw.ca
                   </a>
                 </h4>
+                
                 {/* <img src='https://static1.squarespace.com/static/555269d2e4b012049c615617/t/593566e89de4bb5dfbc316c8/1496671983414/KW+Integrity+Realty+logo-blck+text-JAN+2017.jpg' alt='kw' /> */}
               </div>
 
