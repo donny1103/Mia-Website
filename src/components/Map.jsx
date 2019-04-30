@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-const { maps } = window.google;
-
+console.log(process.env.REACT_APP_GOOGLE_MAP_API);
 class Map extends Component{
 
   state = {
@@ -9,12 +8,23 @@ class Map extends Component{
     kwMarker: '',
   };
 
-  componentDidMount(){
-    this.initMap();
+  componentWillMount() {
+    if (!window.google) {
+      let s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = `https://maps.google.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API}`;
+      let x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+      s.addEventListener('load', () => {
+        this.initMap();
+      })
+    } else {
+      this.initMap();
+    }
   }
 
   componentWillUnmount(){
-    maps.event.clearListeners(this.state.kwMarker, 'click');
+    window.google.maps.event.clearListeners(this.state.kwMarker, 'click');
   }
 
   initMap = () =>{
@@ -25,7 +35,7 @@ class Map extends Component{
       draggableCursor: 'default',
       disableDefaultUI: false,
     }
-    const map = new maps.Map(document.getElementById('map'), mapOption);
+    const map = new window.google.maps.Map(document.getElementById('map'), mapOption);
  
     const kwMarker = this.placeMarker(map, {lat:45.369517, lng: -75.768708});
     const infoWindow = this.createInfoWindow(map, kwMarker);
@@ -34,7 +44,7 @@ class Map extends Component{
   }
 
   placeMarker = (map, position) => {
-    const marker = new maps.Marker({
+    const marker = new window.google.maps.Marker({
       position,
       map,
     });
@@ -42,7 +52,7 @@ class Map extends Component{
   }
 
   createInfoWindow = (map, marker) => {
-    const infoWindow = new maps.InfoWindow({
+    const infoWindow = new window.google.maps.InfoWindow({
         content: '<div id="infoWindow" />',
     })
 

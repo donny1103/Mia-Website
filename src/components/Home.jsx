@@ -3,6 +3,7 @@ import FeaturedItem from './FeaturedItem';
 import Map from './Map';
 
 export default class Home extends Component{
+
   render(){
     return(
       <div id='home-page'>
@@ -14,7 +15,7 @@ export default class Home extends Component{
 
           <div className='info col-sm-7 text-light text-center text-sm-left'>
             <div className='row flex-column justify-content-around'  style={{height: '100%'}}>
-              <div className='col'>
+              <div className='col text-center'>
                 <h1>Mia Li</h1>
                 <h4>
                   <a href = 'tel: 6137162998' className='text-light'>
@@ -28,6 +29,7 @@ export default class Home extends Component{
                 </h4>
                 {/* <img src='https://static1.squarespace.com/static/555269d2e4b012049c615617/t/593566e89de4bb5dfbc316c8/1496671983414/KW+Integrity+Realty+logo-blck+text-JAN+2017.jpg' alt='kw' /> */}
               </div>
+
               <div className='col mt-3'>
                 <div className='d-flex justify-content-around'>
                   <button className='mr-2'>Home Evaluation</button>
