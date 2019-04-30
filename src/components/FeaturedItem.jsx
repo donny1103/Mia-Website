@@ -1,6 +1,6 @@
 import React from 'react'
 import Ribbon from './Ribbon';
-const FeaturedItem = ({imgSrc, price, address, info,  ribbon}) => (
+const FeaturedItem = ({imgSrc, price, address, area, info,  ribbon}) => (
   <div className='card'>
 
     {ribbon.text && <Ribbon text={ribbon.text} colorName={ribbon.color} />}
@@ -15,12 +15,14 @@ const FeaturedItem = ({imgSrc, price, address, info,  ribbon}) => (
     <div className='card-body text-center'>
 
       <div>{price}</div>
-      <div>{address}</div>
-
+      {/* <small>{address}</small> */}
+      <div>
+       <small>{area}</small>
+      </div>
       <div className='d-flex justify-content-center'>
-        <div className='mr-3'><i className='fas fa-bed' /> {info.bed}</div>
-        <div className='mr-3'><i className="fas fa-bath" /> {info.bath}</div>
-        <div> <i className="fas fa-warehouse" /> {info.garage}</div>
+        <small className='mr-3'><i className='fas fa-bed' /> {info.bed}</small>
+        <small className='mr-3'><i className="fas fa-bath" /> {info.bath}</small>
+        <small> <i className="fas fa-warehouse" /> {info.garage}</small>
       </div>
     
     </div>
