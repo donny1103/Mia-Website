@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-console.log(process.env.REACT_APP_GOOGLE_MAP_API);
+
 class Map extends Component{
 
   state = {
@@ -58,7 +58,6 @@ class Map extends Component{
 
     infoWindow.addListener('domready', e => {
       render(<InfoWindow title='Keller Williams Integrity Realty, Brokerage' 
-                         address='2148 Carling Avenue, Units 5 & 6, Ottawa, ON K2A 1H1'
       />, document.getElementById('infoWindow'))
     })
 

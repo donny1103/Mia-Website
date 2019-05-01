@@ -79,8 +79,33 @@ export default class Home extends Component{
         </div>
 
         <div className='row mt-3'>
-            <div className='col-sm-8'>
+            <div className='col-sm-6 col-xl-7'>
               <Map />
+            </div>
+            <div className='col-sm-6 col-xl-5 mt-3 mt-sm-0'>
+              <div className='card h-100'>
+                <div className='card-body'>
+                  <div className='cad-title text-center'>
+                    <strong>Keller Williams Integrity Realty, Brokerage</strong>
+                  </div>
+                  <div className='row justify-content-center align-items-center mt-3'>
+                    <i className="fas fa-map-marker-alt col-2 text-center"/>
+                    <div className='col-10'>2148 Carling Avenue, Units 5 & 6, Ottawa, ON K2A 1H1</div>
+                  </div>
+
+                  <div className='row justify-content-center align-items-center'>
+                    <i className='fas fa-phone col-2 text-center'/> 
+                    <a href = 'tel: 6138291818' className='col-10'>6138291818</a>
+                  </div>
+
+                  <div className='row justify-content-center align-items-center'>
+                    <div className='col-2 d-flex align-items-center justify-content-center'>
+                      <i className="material-icons " >public</i>
+                    </div>
+                    <a href='http://kwintegrity.ca' target='__blank' className='col-10'>kwintegrity.ca</a>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
       </div>
