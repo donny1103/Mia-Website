@@ -7,8 +7,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route component={ Navbar } />
-        <Route path='/' exact component={ Home } />
+        <div className='main-container'>
+          <Route component={ Navbar } />
+          <Route path='/' exact component={ Home } />
+        </div>
       </Router>
     );
   }

@@ -8,7 +8,7 @@ class Map extends Component{
     kwMarker: '',
   };
 
-  componentWillMount() {
+  componentDidMount() {
     if (!window.google) {
       let s = document.createElement('script');
       s.type = 'text/javascript';

@@ -4,18 +4,21 @@ const FeaturedItem = ({imgSrc, price, address, area, info,  ribbon}) => (
   <div className='card'>
 
     {ribbon.text && <Ribbon text={ribbon.text} colorName={ribbon.color} />}
-
+    
     <img src={imgSrc} className='card-img-top' alt='feature-listing' />
+
+    <div className='feature-price'>
+      <span>{price}</span>
+      <div className='img-overlay-background' />
+    </div>    
 
     <div className='card-img-overlay'>
       <span>View Listing</span>
       <div className='img-overlay-background' />
     </div>
-
+    
     <div className='card-body text-center'>
-
-      <div>{price}</div>
-      {/* <small>{address}</small> */}
+    
       <div>
        <small>{area}</small>
       </div>

@@ -10,8 +10,15 @@ $main-color: #343a40;
 body{
   background-color: $main-color;
 
-  nav{
+  .main-container{
+    background: url("https://wfmh.global/wp-content/uploads/houston-skyline-day-1.jpg") no-repeat center fixed; 
+  }
 
+  .navbar-contact-info{
+    font-size: 1.2rem;
+    background-color: $main-color;
+  }
+  nav{
     @media screen and (min-width: $break-md) {
       height: #{$nav-height}px;
     }
@@ -73,13 +80,19 @@ body{
       }
     }
 
-    .home-page-profile{
-      background: url("https://wfmh.global/wp-content/uploads/houston-skyline-day-1.jpg") no-repeat center center; 
-      border-radius: 5px;
-    }
+    // .home-page-profile{
+    //   background: url("https://wfmh.global/wp-content/uploads/houston-skyline-day-1.jpg") no-repeat center center; 
+    //   border-radius: 5px;
+    // }
     .info{
       margin-bottom: 1rem;
       
+      .info-item{
+        display: flex;
+        height: 90%;
+        align-items: flex-end;
+      }
+
       a{
         color: black;
       }
@@ -162,10 +175,16 @@ body{
     }
     
     .featured-listings{
+
+      .card-body{
+        padding: 0 0 5px 0;
+      }
+
       .card-group{
 
         .card{
           border: 0;
+          position: relative;
           .card-img-top {
             width: 100%;
             height: 20vw;
@@ -174,7 +193,25 @@ body{
               height: 40vw;
             }
           }
-          
+
+          .feature-price{
+            position: absolute;
+            height: 20vw;
+            padding: 0;
+            width: 100%;
+            @media screen and (max-width: $break-sm) {
+              height: 40vw;
+            }
+            span{
+              position: absolute;
+              left: 50%;
+              top: 90%;
+              transform: translate(-50%, -50%);
+              color: white;
+              font-size: 1.5rem;
+            }
+          }
+
           .card-img-overlay{
             display: none;
             height: 20vw;
@@ -198,6 +235,7 @@ body{
               opacity: 0.5;
             }
           }
+
         }
 
         .card:hover .card-img-overlay{

@@ -7,17 +7,18 @@ export default class Home extends Component{
   render(){
     return(
       <div id='home-page'>
+      
         <div className='row justify-content-center home-page-profile ml-0 mr-0'>
-        
+  
           <div className='col-sm-5 image-container d-none d-sm-flex'>
               <img src={require('./mia.png')} alt='mia' className='align-self-end'/>
           </div>
 
           <div className='info col-sm-7 text-light text-center text-sm-left'>
-            <div className='row flex-column justify-content-around'  style={{height: '100%'}}>
-              <div className='col text-center'>
+            <div className='info-item'>
+              <div className='text-center w-100'>
                 <h1>Mia Li</h1>
-                <h4>
+                {/* <h4>
                   <a href = 'tel: 6137162998' className='text-light'>
                     <i className='fas fa-phone'/> 6137162998
                   </a>
@@ -28,15 +29,19 @@ export default class Home extends Component{
                   </a>
                 </h4>
                 
-                {/* <img src='https://static1.squarespace.com/static/555269d2e4b012049c615617/t/593566e89de4bb5dfbc316c8/1496671983414/KW+Integrity+Realty+logo-blck+text-JAN+2017.jpg' alt='kw' /> */}
-              </div>
-
-              <div className='col mt-3'>
+                <img src='https://static1.squarespace.com/static/555269d2e4b012049c615617/t/593566e89de4bb5dfbc316c8/1496671983414/KW+Integrity+Realty+logo-blck+text-JAN+2017.jpg' alt='kw' /> */}
                 <div className='d-flex justify-content-around'>
                   <button className='mr-2'>Home Evaluation</button>
                   <button>Properities</button>
                 </div>
               </div>
+
+              {/* <div className='col mt-3'>
+                <div className='d-flex justify-content-around'>
+                  <button className='mr-2'>Home Evaluation</button>
+                  <button>Properities</button>
+                </div>
+              </div> */}
             </div>
 
           </div>
@@ -44,7 +49,11 @@ export default class Home extends Component{
         </div>
 
         <div className='card featured-listings mt-3 mt-sm-0'>
-          <div className='card-title text-center mt-3'><h2>FEATURED LISTINGS</h2></div>
+
+          <div className='card-title text-center mt-3'>
+            <h2>FEATURED LISTINGS</h2>
+          </div>
+
           <div className='card-body'>
             <div className='card-group'>
               <FeaturedItem 
@@ -73,14 +82,24 @@ export default class Home extends Component{
                 info={{bed: 3, bath: 2.5, garage: 2}}
                 ribbon={{color: 'red', text: 'Sold'}}
               />
-
             </div>
           </div>
+          
         </div>
 
         <div className='row mt-3'>
-            <div className='col-sm-6 col-xl-7'>
-              <Map />
+          <div className='col-sm-6 col-xl-7'>
+            <iframe
+              width='100%'
+              height="300"
+              frameBorder="0" 
+              title='Keller Williams Integrity Realty'
+              style={{border: 0}}
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAP_API}
+                &q=Keller+Williams+Integrity+Realty,+Brokerage, Ottawa+ON&center=45.371746, -75.776367&zoom=14`} 
+                allowFullScreen
+            />
+    
             </div>
             <div className='col-sm-6 col-xl-5 mt-3 mt-sm-0'>
               <div className='card h-100'>
@@ -107,7 +126,7 @@ export default class Home extends Component{
                 </div>
               </div>
             </div>
-        </div>
+         </div>
       </div>
     )
   }
